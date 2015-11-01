@@ -1,0 +1,40 @@
+﻿@model WebApplication1.Models.Class2
+
+@{
+    ViewBag.Title = "AddEquipment";
+}
+
+
+    <table border="12" cellpadding="12" cellspacing="12" style="text-align:left" id='sampleform' action="cgi-bin/formmail.pl" method="post">
+        <tbody>
+            <tr>
+                <td>Category:</td>
+                <td>
+                    <select>
+                        @foreach (var item in ViewBag.list)
+                        {
+                            <option name="type" value="@item.Name">@item.Name</option>
+                        }
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Code:</td>
+                <td><input name="name" size="60" /></td>
+            </tr>
+            <tr>
+                <td>Name:</td>
+                <td><input name="info" size="60" /></td>
+            </tr>
+            <tr>
+                <td>Description:</td>
+                <td><textarea cols="60" name="description" rows="6"></textarea></td>
+            </tr>
+            <tr>
+                <td colspan="2" rowspan="1"><input name="add" type="submit" value="Add" /></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+@Html.ActionLink("Back to Inventory", "Index")

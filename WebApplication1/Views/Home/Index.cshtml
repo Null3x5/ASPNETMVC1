@@ -1,0 +1,42 @@
+﻿@model WebApplication1.Models.Class1
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+</head>
+</br>
+<table class="table" name="something">
+    <thead>
+        <a href="/Home/AddCat">Add Category</a>||<a href="/Home/AddEquipment">Add Equipment</a>
+
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Code</th>
+            <th scope="col">Name</th>
+            <th scope="col">Category</th>
+
+            <th scope="col">&nbsp;</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.list)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.Code</td>
+                <td>@item.Name</td>
+
+
+                <td><a href="/Home/ItemInfo/@item.id">View</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+</html>
